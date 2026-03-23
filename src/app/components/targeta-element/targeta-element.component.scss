@@ -1,0 +1,14 @@
+.targeta {
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: whitesmoke;
+  transition: 0.3s;
+
+  &:hover {
+    background-color:beige;
+    transform: scale(1.10);
+  }
+}

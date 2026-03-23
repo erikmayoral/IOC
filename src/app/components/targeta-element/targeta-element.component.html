@@ -1,0 +1,5 @@
+<div class="targeta" (click)="onSeleccionar()">
+  <h3>{{ elemento.nombre }}</h3>
+  <p>{{ elemento.cantidad }} ud/uds.</p>
+  <p *ngIf="elemento.ubicacion">Almacenado en {{ elemento.ubicacion | uppercase }}</p>
+</div>
