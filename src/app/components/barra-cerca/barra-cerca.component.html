@@ -1,1 +1,15 @@
-<input type="text" placeholder="Buscar..." (input)="onCerca($event)"/>
+<!-- <input type="text" placeholder="Buscar..." (input)="onCerca($event)"/> -->
+ <form #formCerca="ngForm" (ngSubmit)="onSubmit()">
+    <input type="text" name="texto" [(ngModel)]="texto" #textoCtrl="ngModel" required minlength="3" placeholder="Buscar:"/>
+    <div *ngIf="textoCtrl.invalid && textoCtrl.touched">
+        <small *ngIf="textoCtrl.errors?.['required']">
+            Campo obligatorio
+        </small>
+        <small *ngIf="textoCtrl.errors?.['minlength']">
+            Mínimo 3 carácteres
+        </small>
+    </div>
+    <button type="submit" [disabled]="formCerca.invalid">
+        Buscar producto
+    </button>
+ </form>
