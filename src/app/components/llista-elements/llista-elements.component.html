@@ -1,6 +1,6 @@
 <app-barra-cerca (cerca)="filtrarElementos($event)"></app-barra-cerca>
 
-<div *ngIf="elementosFiltrados.length > 0; else noResultados">
+<div *ngIf="elementosFiltrados.length > 0; else noResultados" class="grid">
   <app-targeta-element
     *ngFor="let el of elementosFiltrados; trackBy: trackById"
     [elemento]="el"

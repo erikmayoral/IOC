@@ -11,10 +11,15 @@ button {
 input.ng-invalid.ng-touched {
   border: 2px solid red;
 }
+input.ng-valid.ng-touched{
+  border: 2px solid green
+}
 small{
   color: red;
 }
-
+label{
+  font-size: 12px;
+}
 button:disabled {
   background-color: white;
 }
