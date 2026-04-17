@@ -1,0 +1,17 @@
+.targeta {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 5px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  background-color: whitesmoke;
+  transition: 0.3s;
+
+  &:hover {
+    background-color:beige;
+    transform: scale(1.10);
+  }
+}

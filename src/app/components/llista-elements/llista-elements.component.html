@@ -1,0 +1,23 @@
+<app-barra-cerca (cerca)="filtrarElementos($event)"></app-barra-cerca>
+
+<div *ngIf="elementosFiltrados.length > 0; else noResultados" class="grid">
+  <app-targeta-element
+    *ngFor="let el of elementosFiltrados; trackBy: trackById"
+    [elemento]="el"
+    (seleccionado)="onElementoSeleccionado($event)">
+  </app-targeta-element>
+</div>
+
+<ng-template #noResultados>
+  <p class="no-resultados">No se han encontrado coincidencias.</p>
+</ng-template>
+
+
+<div *ngIf="elementoSeleccionado" class="detalle">
+  <h2>Seleccionado:</h2>
+  <p>{{ elementoSeleccionado?.nombre }}</p>
+  <p>Cantidad: {{ elementoSeleccionado?.cantidad }}</p>
+  <p *ngIf="elementoSeleccionado.ubicacion">
+    Ubicación: {{ elementoSeleccionado?.ubicacion }}
+  </p>
+</div>
