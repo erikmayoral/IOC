@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Elemento } from '../../models/element.model';
-
+import { ElementCataleg } from '../../models/element.model';
 @Component({
   selector: 'app-targeta-element',
   templateUrl: './targeta-element.component.html',
@@ -11,8 +10,8 @@ import { Elemento } from '../../models/element.model';
 })
 export class TargetaElementComponent {
 
-  @Input() elemento!: Elemento;
-  @Output() seleccionado = new EventEmitter<Elemento>();
+  @Input() elemento!: ElementCataleg;
+  @Output() seleccionado = new EventEmitter<ElementCataleg>();
 
   onSeleccionar() {
     this.seleccionado.emit(this.elemento);

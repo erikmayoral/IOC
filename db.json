@@ -1,0 +1,9 @@
+{
+  "elements": [
+    { "id": 1, "nombre": "Arroz", "cantidad": 3, "ubicacion": "A1", "popular": true },
+    { "id": 2, "nombre": "Lentejas", "cantidad": 3, "ubicacion": "A1", "popular": true },
+    { "id": 3, "nombre": "Galletas", "cantidad": 1, "ubicacion": "C2", "popular": false },
+    { "id": 4, "nombre": "Chocolate", "cantidad": 1, "popular": true },
+    { "id": 5, "nombre": "Patatas", "cantidad": 5, "popular": false }
+  ]
+}

@@ -1,7 +1,20 @@
-export interface Elemento {
-    id: number;
-    nombre: string;
-    cantidad: number;
-    // ? Implica que es opcional. Define en qué lugar está el producto de la despensa.
-    ubicacion?: string;
+export interface ElementApiResponse {
+  id: string;
+  nom: string;
+  descripcio: string;
+  categoria: string;
+  preu: number;
+  imatge: string;
+  popular: boolean;
+  stock: number;
+}
+export interface ElementCataleg {
+  id: string;
+  titol: string;
+  descripcio: string;
+  categoria: string;
+  preu: number;
+  imatgeUrl: string;
+  esPopular: boolean;
+  unitats: number;
 }
