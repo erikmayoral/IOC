@@ -6,6 +6,7 @@ import { ElementCataleg } from '../models/element.model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ElementService {
 
   private apiUrl = environment.apiUrl;
