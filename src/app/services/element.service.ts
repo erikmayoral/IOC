@@ -32,7 +32,7 @@ export class ElementService {
           this._carregant.set(false);
         },
         error: () => {
-          this._error.set('No s’han pogut carregar els elements populars.');
+          this._error.set('No se han podido cargar elementos populares');
           this._carregant.set(false);
         }
       });
@@ -48,7 +48,7 @@ export class ElementService {
           this._carregant.set(false);
         },
         error: () => {
-          this._error.set('Error en la cerca d’elements.');
+          this._error.set('Error al filtrar por nombre.');
           this._carregant.set(false);
         }
       });

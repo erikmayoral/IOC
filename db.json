@@ -1,9 +1,54 @@
 {
   "elements": [
-    { "id": 1, "nombre": "Arroz", "cantidad": 3, "ubicacion": "A1", "popular": true },
-    { "id": 2, "nombre": "Lentejas", "cantidad": 3, "ubicacion": "A1", "popular": true },
-    { "id": 3, "nombre": "Galletas", "cantidad": 1, "ubicacion": "C2", "popular": false },
-    { "id": 4, "nombre": "Chocolate", "cantidad": 1, "popular": true },
-    { "id": 5, "nombre": "Patatas", "cantidad": 5, "popular": false }
+    {
+      "id": "1",
+      "nom": "Arroz",
+      "descripcio": "Arroz blanco de grano largo",
+      "categoria": "Alimentació",
+      "preu": 1.2,
+      "imatge": "https://via.placeholder.com/150",
+      "popular": true,
+      "stock": 3
+    },
+    {
+      "id": "2",
+      "nom": "Lentejas",
+      "descripcio": "Lentejas pardinas",
+      "categoria": "Alimentació",
+      "preu": 1.5,
+      "imatge": "https://via.placeholder.com/150",
+      "popular": true,
+      "stock": 3
+    },
+    {
+      "id": "3",
+      "nom": "Galletas",
+      "descripcio": "Galletas de chocolate",
+      "categoria": "Snacks",
+      "preu": 2.0,
+      "imatge": "https://via.placeholder.com/150",
+      "popular": false,
+      "stock": 1
+    },
+    {
+      "id": "4",
+      "nom": "Chocolate",
+      "descripcio": "Chocolate negro 70%",
+      "categoria": "Snacks",
+      "preu": 2.5,
+      "imatge": "https://via.placeholder.com/150",
+      "popular": true,
+      "stock": 1
+    },
+    {
+      "id": "5",
+      "nom": "Patatas",
+      "descripcio": "Patatas fritas",
+      "categoria": "Snacks",
+      "preu": 1.8,
+      "imatge": "https://via.placeholder.com/150",
+      "popular": false,
+      "stock": 5
+    }
   ]
 }

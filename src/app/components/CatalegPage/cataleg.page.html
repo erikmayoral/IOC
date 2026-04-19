@@ -1,0 +1,26 @@
+<div class="container">
+
+  <input
+    type="text"
+    placeholder="Cercar..."
+    #inputCerca
+    (keyup.enter)="cercar(inputCerca.value)"
+  />
+  <div *ngIf="carregant()" class="spinner-container">
+    <div class="spinner"></div>
+    <p>Cargando elementos...</p>
+  </div>
+
+  <div *ngIf="error()" class="error-container">
+    <p>{{ error() }}</p>
+    <button (click)="reintentar()">Reintentar</button>
+  </div>
+
+  <div *ngIf="!carregant() && !error()" class="grid">
+    <div *ngFor="let element of elements()" class="card">
+      <h3>{{ element.titol }}</h3>
+      <p>{{ element.descripcio }}</p>
+    </div>
+  </div>
+
+</div>
