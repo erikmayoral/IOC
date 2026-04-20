@@ -1,0 +1,41 @@
+$color-preferit: #ffca28;
+$color-buit: #bdbdbd;
+$transicio: all 0.3s ease;
+
+.btn-preferit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid #e0e0e0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: $transicio;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #555;
+
+  &:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+  }
+
+  span {
+    font-size: 1.4rem;
+    line-height: 1;
+    color: $color-buit;
+    transition: $transicio;
+   
+    &.active {
+      color: $color-preferit;
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 2px rgba($color-preferit, 0.5));
+    }
+  }
+
+  &:has(.active) {
+    background-color: rgba($color-preferit, 0.05);
+    border-color: rgba($color-preferit, 0.3);
+  }
+}

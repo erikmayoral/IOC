@@ -1,7 +1,7 @@
 
 # Mapeo del modelo de datos
 
-Correspondencia campos
+/ Correspondencia campos
 
 | Campo API    | Campo interno |   Tipo    |
 |--------------|---------------|-----------|

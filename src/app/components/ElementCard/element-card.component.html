@@ -1,0 +1,10 @@
+<div class="card">
+  <h3>{{ element.nom }}</h3>
+
+  <button (click)="togglePreferit()" class="btn-preferit">
+    <span [class.active]="isFavorite">
+      {{ isFavorite ? '★' : '☆' }}
+    </span>
+    {{ isFavorite ? 'Treure de preferits' : 'Afegir a preferits' }}
+  </button>
+</div>
