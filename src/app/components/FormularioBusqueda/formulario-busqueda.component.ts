@@ -22,23 +22,34 @@ export class FormulariCercaComponent implements OnInit {
 
   ngOnInit(): void {
     this.formulariCerca = this.fb.group({
-      terme: ['', [
-        Validators.minLength(3)
-      ]]
+      termeCerca: ['',
+        [Validators.minLength(2), Validators.maxLength(50)],
+        [codiDisponibleValidator(this.elementService)]
+      ]
     });
 
-    // Cerca automàtica amb debounce
-    this.formulariCerca.get('terme')?.valueChanges
-      .pipe(debounceTime(500))
-      .subscribe(terme => {
-        if (this.formulariCerca.get('terme')?.valid) {
+    // 1. Debounce de 400ms (ajustado de 500 a 400)
+    this.formulariCerca.get('termeCerca')?.valueChanges
+      .pipe(debounceTime(400))
+      .subscribe(() => {
+        if (this.formulariCerca.get('termeCerca')?.valid) {
           this.cercar();
         }
       });
   }
 
+  // 2. Botón Netejar: Comprueba si hay texto para mostrarse en el HTML
+  get teText(): boolean {
+    return !!this.formulariCerca.get('termeCerca')?.value;
+  }
+
+  // 3. Indicador visual: Valida si el estado es 'PENDING'
+  get estaValidant(): boolean {
+    return this.formulariCerca.get('termeCerca')?.status === 'PENDING';
+  }
+
   cercar(): void {
-    const terme = this.formulariCerca.get('terme')?.value;
+    const terme = this.formulariCerca.get('termeCerca')?.value;
     this.elementService.cercar(terme);
   }
 
@@ -47,20 +58,20 @@ export class FormulariCercaComponent implements OnInit {
     this.elementService.obtenirPopulars();
   }
 
-  get estaCarregant(): boolean {
-    return this.elementService.estat() === 'cargando';
-  }
-
+  // 4. Mostrar errores solo si es touched (ya incluido en la lógica)
   get termeInvalid(): boolean {
-    const control = this.formulariCerca.get('terme');
+    const control = this.formulariCerca.get('termeCerca');
     return !!(control?.invalid && control?.touched);
   }
 
   get missatgeError(): string {
-    const control = this.formulariCerca.get('terme');
-    if (control?.hasError('minlength')) {
-      return 'Mínim 3 caràcters';
-    }
+    const control = this.formulariCerca.get('termeCerca');
+    if (!control?.touched) return ''; // No mostramos error si no se ha tocado
+
+    if (control.hasError('minlength')) return 'Mínim 2 caràcters';
+    if (control.hasError('maxlength')) return 'Màxim 50 caràcters';
+    if (control.hasError('sensResultats')) return 'No hi ha resultats per a aquesta cerca';
+   
     return '';
   }
 }
