@@ -3,14 +3,13 @@ import { ElementCataleg, ElementApiResponse } from '../models/element.model';
 export function adaptarElementApi(apiElement: ElementApiResponse): ElementCataleg {
   return {
     id: apiElement.id,
-    nom: apiElement.nom,
+    titol: apiElement.nom,
     descripcio: apiElement.descripcio,
     categoria: apiElement.categoria,
     preu: apiElement.preu,
-    imatge: apiElement.imatge,
+    imatgeUrl: apiElement.imatge,
     esPopular: apiElement.popular,
-    stock: apiElement.stock,
-    dataAfegit: new Date()
+    unitats: apiElement.stock,
   };
 }
 
@@ -21,13 +20,12 @@ export function adaptarElementsApi(apiElements: ElementApiResponse[]): ElementCa
 export function elementBuit(): ElementCataleg {
   return {
     id: '',
-    nom: '',
+    titol: '',
     descripcio: '',
     categoria: '',
     preu: 0,
-    imatge: 'https://via.placeholder.com/300x200?text=Sense+imatge',
+    imatgeUrl: 'https://via.placeholder.com/300x200?text=Sense+imatge',
     esPopular: false,
-    stock: 0,
-    dataAfegit: new Date()
+    unitats: 0,
   };
 }

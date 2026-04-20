@@ -33,15 +33,15 @@
     <!-- Llistat d'elements -->
     <div class="elements-grid" *ngIf="elementService.elements().length > 0">
       <div class="element-card" *ngFor="let element of elementService.elements()">
-        <img [src]="element.imatge" [alt]="element.nom" class="element-imatge">
+        <img [src]="element.imatgeUrl" [alt]="element.titol" class="element-imatge">
         <div class="element-info">
-          <h3 class="element-nom">{{ element.nom }}</h3>
+          <h3 class="element-nom">{{ element.titol }}</h3>
           <p class="element-categoria">{{ element.categoria }}</p>
           <p class="element-descripcio">{{ element.descripcio }}</p>
           <div class="element-footer">
             <span class="element-preu">{{ element.preu | number:'1.2-2' }}€</span>
-            <span class="element-stock" [class.baix-stock]="element.stock < 20">
-              Stock: {{ element.stock }}
+            <span class="element-stock" [class.baix-stock]="element.unitats < 20">
+              Stock: {{ element.unitats }}
             </span>
           </div>
         </div>

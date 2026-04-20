@@ -1,13 +1,12 @@
 export interface ElementCataleg {
   id: string;
-  nom: string;
+  titol: string;
   descripcio: string;
   categoria: string;
   preu: number;
-  imatge: string;
+  imatgeUrl: string;
   esPopular: boolean;
-  stock: number;
-  dataAfegit?: Date;
+  unitats: number;
 }
 
 export interface ElementApiResponse {
