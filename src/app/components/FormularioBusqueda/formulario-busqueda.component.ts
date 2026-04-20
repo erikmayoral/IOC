@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ElementService } from '../../serveis/element.service';
+import { ElementService } from '../../services/element.service';
 import { codiDisponibleValidator } from '../../validadors/codi-disponible.validator';
 import { debounceTime } from 'rxjs/operators';
 
@@ -9,8 +9,8 @@ import { debounceTime } from 'rxjs/operators';
   selector: 'app-formulari-cerca',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './formulari-cerca.component.html',
-  styleUrl: './formulari-cerca.component.scss'
+  templateUrl: './formulario-busqueda.component.html',
+  styleUrl: './formulario-busqueda.component.scss'
 })
 export class FormulariCercaComponent implements OnInit {
   formulariCerca!: FormGroup;
@@ -48,7 +48,7 @@ export class FormulariCercaComponent implements OnInit {
   }
 
   get estaCarregant(): boolean {
-    return this.elementService.estat() === 'carregant';
+    return this.elementService.estat() === 'cargando';
   }
 
   get termeInvalid(): boolean {

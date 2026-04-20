@@ -1,20 +1,33 @@
-import { ElementApiResponse, ElementCataleg } from '../models/element.model';
-export function adaptarElementApi(
-  apiResponse: ElementApiResponse
-): ElementCataleg {
+import { ElementCataleg, ElementApiResponse } from '../models/element.model';
+
+export function adaptarElementApi(apiElement: ElementApiResponse): ElementCataleg {
   return {
-    id: apiResponse.id,
-    titol: apiResponse.nom,
-    descripcio: apiResponse.descripcio,
-    categoria: apiResponse.categoria,
-    preu: apiResponse.preu,
-    imatgeUrl: apiResponse.imatge,
-    esPopular: apiResponse.popular,
-    unitats: apiResponse.stock,
+    id: apiElement.id,
+    nom: apiElement.nom,
+    descripcio: apiElement.descripcio,
+    categoria: apiElement.categoria,
+    preu: apiElement.preu,
+    imatge: apiElement.imatge,
+    esPopular: apiElement.popular,
+    stock: apiElement.stock,
+    dataAfegit: new Date()
   };
 }
-export function adaptarElementsApi(
-  apiResponses: ElementApiResponse[]
-): ElementCataleg[] {
-  return apiResponses.map(adaptarElementApi);
+
+export function adaptarElementsApi(apiElements: ElementApiResponse[]): ElementCataleg[] {
+  return apiElements.map(adaptarElementApi);
+}
+
+export function elementBuit(): ElementCataleg {
+  return {
+    id: '',
+    nom: '',
+    descripcio: '',
+    categoria: '',
+    preu: 0,
+    imatge: 'https://via.placeholder.com/300x200?text=Sense+imatge',
+    esPopular: false,
+    stock: 0,
+    dataAfegit: new Date()
+  };
 }
