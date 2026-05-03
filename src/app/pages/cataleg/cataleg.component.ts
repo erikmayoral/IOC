@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './cataleg.component.html',
-  styleUrl: './cataleg.component.css'
+  styleUrl: './cataleg.component.scss'
 })
 export class CatalegComponent {
 

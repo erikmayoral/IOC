@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-detall',
   standalone: true,
+  imports: [CommonModule],
   templateUrl: './detall.component.html',
-  styleUrl: './detall.component.css'
+  styleUrl: './detall.component.scss'
 })
 export class DetallComponent implements OnInit {
 
