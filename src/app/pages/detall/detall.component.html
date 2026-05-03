@@ -1,0 +1,10 @@
+<h1>Detall</h1>
+
+<div *ngIf="element">
+  <h2>{{ element.nom }}</h2>
+  <p>{{ element.descripcio }}</p>
+</div>
+
+<div *ngIf="!element">
+  <p>No s'ha trobat l'element.</p>
+</div>
