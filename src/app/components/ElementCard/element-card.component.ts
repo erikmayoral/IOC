@@ -11,9 +11,7 @@ import { PreferitsService, ElementCataleg } from '../../services/preferits.servi
 })
 export class ElementCardComponent {
   @Input({ required: true }) element!: ElementCataleg;
- 
-  // Injectem el servei
-  private preferitsService = inject(PreferitsService);
+   private preferitsService = inject(PreferitsService);
 
   togglePreferit(): void {
     if (this.isFavorite) {
