@@ -16,9 +16,9 @@ export class DetallComponent implements OnInit {
   element: any;
 
   dadesProva = [
-    { id: 1, nom: 'Pel·lícula 1', descripcio: 'Descripció pel·lícula 1' },
-    { id: 2, nom: 'Pel·lícula 2', descripcio: 'Descripció pel·lícula 2' },
-    { id: 3, nom: 'Pel·lícula 3', descripcio: 'Descripció pel·lícula 3' }
+    { id: 1, nom: 'Producto 1', descripcio: 'Descripción del producto 1' },
+    { id: 2, nom: 'Producto 2', descripcio: 'Descripción del producto 2' },
+    { id: 3, nom: 'Producto 3', descripcio: 'Descripción del producto 3' }
   ];
 
   constructor(private route: ActivatedRoute) {}

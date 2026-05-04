@@ -1,27 +1,29 @@
-# IocAngularLaDespensaDeCasaErik
+# Nombre del projecte
+La despensa de casa.
+Aplicación desarollada con Angular que permite visualizar un catálogo de elementos, que simula una despensa. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+## Mapa de rutes
+| Path        | Component            | Accés   |
+|------------|---------------------|--------|
+| /cataleg   | CatalegComponent    | Públic |
+| /detall/:id| DetallComponent     | Públic |
+| /login     | LoginComponent      | Públic |
+| /preferits | PreferitsComponent  | Privat |
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Instrucciones de ejecución en local
 
-## Code scaffolding
+git clone [url-repositori]
+cd [nom-projecte]
+npm install
+ng serve
+Abrir  http://localhost:4200
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+# Build de producción 
+ng build --configuration production
+Tamaño total 88kB
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+# Credenciales
+email: erik@midespensa.com
+password: 12345

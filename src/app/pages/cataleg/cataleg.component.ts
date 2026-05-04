@@ -16,6 +16,6 @@ export class CatalegComponent {
   // 👉 mínimo 50 elementos (te lo piden)
   elements = Array.from({ length: 100 }, (_, i) => ({
     id: i + 1,
-    nom: `Pel·lícula ${i + 1}`
+    nom: `Producto ${i + 1}`
   }));
 }
