@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -7,7 +7,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './detall.component.html',
-  styleUrl: './detall.component.scss'
+  styleUrl: './detall.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DetallComponent implements OnInit {
 
@@ -25,8 +26,10 @@ export class DetallComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
 
-    this.element = this.dadesProva.find(
+    const trobat = this.dadesProva.find(
       item => item.id === Number(this.id)
     );
+
+    this.element = trobat ? { ...trobat } : null;
   }
 }

@@ -1,11 +1,10 @@
-<h1>Catàleg</h1>
-
-<ul>
-  <li>
-    <a [routerLink]="['/detall', 1]">Ver detalle elemento 1</a>
-  </li>
-
-  <li>
-    <a [routerLink]="['/detall', 2]">Ver detalle elemento 2</a>
-  </li>
-</ul>
+<cdk-virtual-scroll-viewport 
+  [itemSize]="60" 
+  style="height: 500px;"
+>
+  <div *cdkVirtualFor="let element of elements">
+    <a [routerLink]="['/detall', element.id]">
+      {{ element.nom }}
+    </a>
+  </div>
+</cdk-virtual-scroll-viewport>
