@@ -2,5 +2,13 @@
   <a routerLink="/cataleg" routerLinkActive="active">Catàleg</a>
   <a routerLink="/cerca" routerLinkActive="active">Cerca</a>
   <a routerLink="/preferits" routerLinkActive="active">Preferits</a>
-  <a routerLink="/login" routerLinkActive="active">Login</a>
+
+  <ng-container *ngIf="usuari$ | async as usuari; else noAuth">
+    <span>Hola, {{ usuari.nom }}</span>
+    <button (click)="logout()">Cerrar sesión</button>
+  </ng-container>
+
+  <ng-template #noAuth>
+    <a routerLink="/login" routerLinkActive="active">Login</a>
+  </ng-template>
 </nav>
